@@ -148,7 +148,7 @@ export default function CheckoutPage() {
     });
 
     setSubmitError(null);
-    const payload: OrderEmailPayload = {
+    const payload: = {
       customerName: fullName,
       orderId,
       subtotal: subtotalLabel,
