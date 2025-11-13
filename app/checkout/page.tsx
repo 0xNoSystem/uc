@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import Header from "@/components/Header.tsx";
+import Header from "@/components/Header";
 import type { CartState } from "@/types/cart";
 import {
   featuredProducts,

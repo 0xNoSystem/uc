@@ -3,8 +3,8 @@
 import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Header from "@/components/Header.tsx";
-import ProductCard from "@/components/ProductCard.tsx";
+import Header from "@/components/Header";
+import ProductCard from "@/components/ProductCard";
 import type { Product } from "@/types/product";
 import { SUPPORT_EMAIL, SUPPORT_PHONE } from "@/lib/contact";
 import type { CartState } from "@/types/cart";
