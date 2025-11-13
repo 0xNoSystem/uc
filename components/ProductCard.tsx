@@ -27,7 +27,7 @@ const CardContent = ({
 
   return (
     <>
-      <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl">
+      <div className="relative aspect-[3/4] w-full overflow-hidden rounded-xl">
         <Image
           src={product.primaryImage}
           alt={`${product.name} primary`}
@@ -49,26 +49,26 @@ const CardContent = ({
         ) : null}
       </div>
 
-      <div className="mt-4 flex flex-col gap-4 px-2 text-white">
-        <div className="flex items-start justify-between">
-          <div className="max-w-[70%]">
-            <p className="text-xs uppercase tracking-[0.4em] text-white/70">
+      <div className="mt-2.5 flex flex-col gap-2.5 px-1.5 text-white">
+        <div className="flex items-start justify-between gap-2">
+          <div className="max-w-[75%]">
+            <p className="text-[10px] uppercase tracking-[0.3em] text-white/60">
               UNDERCONTROL
             </p>
-            <p className="mt-1 text-lg font-semibold leading-tight">
+            <p className="mt-1 text-sm font-semibold leading-tight">
               {product.name}
             </p>
           </div>
           <div className="text-right">
             {product.newPrice ? (
-              <div className="flex flex-col items-end text-sm font-semibold ml-2">
-                <span className="text-xl text-white">{product.newPrice}</span>
-                <span className="text-lg text-white/50 line-through">
+              <div className="ml-1 flex flex-col items-end text-[11px] font-semibold">
+                <span className="text-base text-white">{product.newPrice}</span>
+                <span className="text-[11px] text-white/50 line-through">
                   {product.price}
                 </span>
               </div>
             ) : (
-              <span className="text-lg font-semibold text-white">
+              <span className="text-sm font-semibold text-white">
                 {product.price}
               </span>
             )}
@@ -78,16 +78,16 @@ const CardContent = ({
           </div>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1">
           {colors.map((color) => {
             const isActive = color === activeColor;
             return (
               <button
                 type="button"
                 key={color}
-                className={`h-5 w-5 rounded-full border transition ${
+                className={`h-3.5 w-3.5 rounded-full border transition ${
                   isActive
-                    ? "border-white ring-2 ring-offset-2 ring-offset-black"
+                    ? "border-white ring ring-offset-1 ring-offset-black"
                     : "border-white/30"
                 }`}
                 style={{ backgroundColor: color }}
@@ -103,25 +103,25 @@ const CardContent = ({
           })}
         </div>
         {colors.length > 1 ? (
-          <p className="text-xs uppercase tracking-[0.2em] text-white/60">
+          <p className="text-[10px] uppercase tracking-[0.14em] text-white/60">
             Color:{" "}
             <span className="text-white">{formatColorLabel(activeColor)}</span>
           </p>
         ) : null}
 
-        <div className="rounded-2xl border border-white/10 bg-black/30 p-3">
-          <p className="text-xs uppercase tracking-widest text-white/60">
+        <div className="rounded-lg border border-white/10 bg-black/30 p-2.5">
+          <p className="text-[9px] uppercase tracking-[0.28em] text-white/50">
             Delivery
           </p>
-          <p className="text-sm font-semibold text-white">
+          <p className="text-[11px] font-semibold text-white">
             2-day express in Lebanon
           </p>
         </div>
 
-        <div className="flex items-center justify-between rounded-full border border-white/20 bg-white/5 p-2">
+        <div className="flex items-center justify-between rounded-full border border-white/20 bg-white/5 p-1">
           <button
             type="button"
-            className="h-9 w-9 rounded-full bg-white/10 text-lg font-semibold text-white transition hover:bg-white/20 disabled:opacity-40"
+            className="h-7 w-7 rounded-full bg-white/10 text-sm font-semibold text-white transition hover:bg-white/20 disabled:opacity-40"
             onClick={(event) => {
               event.preventDefault();
               event.stopPropagation();
@@ -132,14 +132,14 @@ const CardContent = ({
             −
           </button>
           <div className="flex flex-col items-center text-center">
-            <span className="text-lg font-semibold">{quantity}</span>
-            <span className="text-[10px] uppercase tracking-wide text-white/60">
+            <span className="text-sm font-semibold">{quantity}</span>
+            <span className="text-[8px] uppercase tracking-wide text-white/60">
               In Cart
             </span>
           </div>
           <button
             type="button"
-            className="h-9 w-9 rounded-full bg-white text-lg font-semibold text-black transition hover:bg-gray-100 disabled:opacity-60"
+            className="h-7 w-7 rounded-full bg-white text-sm font-semibold text-black transition hover:bg-gray-100 disabled:opacity-60"
             onClick={(event) => {
               event.preventDefault();
               event.stopPropagation();
@@ -155,12 +155,15 @@ const CardContent = ({
   );
 };
 
+const cardClasses =
+  "group block overflow-hidden rounded-xl bg-white/5 p-2 ring-1 ring-white/10 backdrop-blur transition hover:-translate-y-1 hover:ring-white/30";
+
 const ProductCard = (props: ProductCardProps) => {
   if (props.product.href) {
     return (
       <Link
         href={props.product.href}
-        className="group block overflow-hidden rounded-3xl bg-white/5 p-3 ring-1 ring-white/10 backdrop-blur transition hover:-translate-y-1 hover:ring-white/30"
+        className={cardClasses}
       >
         <CardContent {...props} />
       </Link>
@@ -168,7 +171,7 @@ const ProductCard = (props: ProductCardProps) => {
   }
 
   return (
-    <div className="group block overflow-hidden rounded-3xl bg-white/5 p-3 ring-1 ring-white/10 backdrop-blur transition hover:-translate-y-1 hover:ring-white/30">
+    <div className={cardClasses}>
       <CardContent {...props} />
     </div>
   );

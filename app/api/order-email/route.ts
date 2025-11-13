@@ -4,11 +4,8 @@ import OrderConfirmation from "@/emails/OrderConfirmation";
 import { SUPPORT_EMAIL } from "@/lib/contact";
 import type { OrderConfirmationProps } from "@/emails/OrderConfirmation";
 
-const getApiKey = () =>
-  process.env.RESEND_API_KEY ?? process.env.NEXT_PUBLIC_RESEND_API_KEY;
-
 const getResendClient = () => {
-  const apiKey = getApiKey();
+  const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) return null;
   return new Resend(apiKey);
 };
@@ -81,4 +78,3 @@ export async function POST(request: Request) {
     );
   }
 }
-
