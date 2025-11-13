@@ -195,7 +195,6 @@ export default function CheckoutPage() {
 
       if (!response.ok || !result?.success) {
         setSubmitError(
-          result?.error ??
             "We couldn't send the order email. Please try again."
         );
         return;
