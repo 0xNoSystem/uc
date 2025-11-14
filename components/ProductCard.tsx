@@ -55,20 +55,20 @@ const CardContent = ({
             <p className="text-[10px] uppercase tracking-[0.3em] text-white/60">
               UNDERCONTROL
             </p>
-            <p className="mt-1 text-sm font-semibold leading-tight">
+            <p className="mt-1 text-2xl font-semibold leading-tight">
               {product.name}
             </p>
           </div>
-          <div className="text-right">
+          <div className="text-lg text-right">
             {product.newPrice ? (
-              <div className="ml-1 flex flex-col items-end text-[11px] font-semibold">
-                <span className="text-base text-white">{product.newPrice}</span>
-                <span className="text-[11px] text-white/50 line-through">
+              <div className="ml-1 flex flex-col items-end text-lg font-semibold">
+                <span className="text-3xl text-white">{product.newPrice}</span>
+                <span className="text-lg text-white/50 line-through">
                   {product.price}
                 </span>
               </div>
             ) : (
-              <span className="text-sm font-semibold text-white">
+              <span className="text-lg font-semibold text-white">
                 {product.price}
               </span>
             )}
@@ -85,7 +85,7 @@ const CardContent = ({
               <button
                 type="button"
                 key={color}
-                className={`h-3.5 w-3.5 rounded-full border transition ${
+                className={`h-5 w-5 rounded-full border transition ${
                   isActive
                     ? "border-white ring ring-offset-1 ring-offset-black"
                     : "border-white/30"
@@ -103,7 +103,7 @@ const CardContent = ({
           })}
         </div>
         {colors.length > 1 ? (
-          <p className="text-[10px] uppercase tracking-[0.14em] text-white/60">
+          <p className="text-[14px] uppercase tracking-[0.14em] text-white/60">
             Color:{" "}
             <span className="text-white">{formatColorLabel(activeColor)}</span>
           </p>
