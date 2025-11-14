@@ -188,7 +188,7 @@ export default function CheckoutPage() {
   });
 
   if (!response.ok) {
-    setSubmitError("We couldn't send the order email. Please try again.");
+    setSubmitError("We couldn't send the order email. Please contact support.");
     return;
   }
 
@@ -201,7 +201,7 @@ export default function CheckoutPage() {
   router.replace("/");
 } catch (error) {
   console.error("Failed to pass order", error);
-  setSubmitError("Unable to reach the email service. Please try again.");
+  setSubmitError("Unable to reach the email service. Please contact support.");
 } finally {
   setIsSendingEmail(false);
 }
