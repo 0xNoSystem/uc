@@ -181,42 +181,31 @@ export default function CheckoutPage() {
     setSubmitError(null);
 
     try {
-      const response = await fetch("/api/order-email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(pendingEmailPayload),
-      });
-      const result = (await response.json().catch(() => null)) as
-        | { success: true; id?: string }
-        | { success: false; error?: string }
-        | null;
+  const response = await fetch("/api/order-email", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(pendingEmailPayload),
+  });
 
-      if (!response.ok || !result?.success) {
-        setSubmitError(
-            "We couldn't send the order email. Please try again."
-        );
-        return;
-      }
+  if (!response.ok) {
+    setSubmitError("We couldn't send the order email. Please try again.");
+    return;
+  }
 
-      setPendingEmailPayload(null);
-      setConfirmationData(null);
-      setCart({});
-      if (typeof window !== "undefined") {
-        window.localStorage.removeItem("uc-cart");
-      }
-      router.push("/");
-    } catch (error) {
-      console.error("Failed to pass order", error);
-      setSubmitError(
-        "Unable to reach the email service. Please try again in a moment."
-      );
-    } finally {
-      setIsSendingEmail(false);
-    }
-  };
+  // Don’t rely on parsing JSON on Safari mobile
+  setPendingEmailPayload(null);
+  setConfirmationData(null);
+  setCart({});
+  window.localStorage.removeItem("uc-cart");
 
+  router.replace("/");
+} catch (error) {
+  console.error("Failed to pass order", error);
+  setSubmitError("Unable to reach the email service. Please try again.");
+} finally {
+  setIsSendingEmail(false);
+}
+  }
   const closeModal = () => {
     setConfirmationData(null);
     setPendingEmailPayload(null);
