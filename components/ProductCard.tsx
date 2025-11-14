@@ -109,19 +109,19 @@ const CardContent = ({
           </p>
         ) : null}
 
-        <div className="rounded-lg border border-white/10 bg-black/30 p-2.5">
-          <p className="text-[9px] uppercase tracking-[0.28em] text-white/50">
+        <div className="rounded-lg border border-white/10 bg-black/30 p-4">
+          <p className="text-[12px] uppercase tracking-[0.28em] text-white/50">
             Delivery
           </p>
-          <p className="text-[11px] font-semibold text-white">
+          <p className="text-[14px] font-semibold text-white">
             2-day express in Lebanon
           </p>
         </div>
 
-        <div className="flex items-center justify-between rounded-full border border-white/20 bg-white/5 p-1">
+        <div className="flex items-center justify-between rounded-full border border-white/20 bg-white/5 p-2 mt-4">
           <button
             type="button"
-            className="h-7 w-7 rounded-full bg-white/10 text-sm font-semibold text-white transition hover:bg-white/20 disabled:opacity-40"
+            className="h-12 w-12 rounded-full bg-white/10 text-lg font-semibold text-white transition hover:bg-white/20 disabled:opacity-40"
             onClick={(event) => {
               event.preventDefault();
               event.stopPropagation();
@@ -132,14 +132,14 @@ const CardContent = ({
             −
           </button>
           <div className="flex flex-col items-center text-center">
-            <span className="text-sm font-semibold">{quantity}</span>
-            <span className="text-[8px] uppercase tracking-wide text-white/60">
+            <span className="text-lg font-semibold">{quantity}</span>
+            <span className="text-[12px] uppercase tracking-wide text-white/60">
               In Cart
             </span>
           </div>
           <button
             type="button"
-            className="h-7 w-7 rounded-full bg-white text-sm font-semibold text-black transition hover:bg-gray-100 disabled:opacity-60"
+            className="h-12 w-12 rounded-full bg-white text-lg font-semibold text-black transition hover:bg-gray-100 disabled:opacity-60"
             onClick={(event) => {
               event.preventDefault();
               event.stopPropagation();
