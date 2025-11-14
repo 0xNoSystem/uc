@@ -234,7 +234,7 @@ export default function Home() {
           <p className="max-w-2xl text-base text-white/70">
             Layered textures, tactical silhouettes, and engineered fabrics designed for life in motion.
           </p>
-          <div className="mt-10 grid grid-cols-2 gap-6">
+          <div className="mt-10 grid grid-cols-2 gap-6 transform lg:scale-[0.75] sm:scale-[1.15]">
             {featuredProducts.map((product) => (
               <ProductCard
                 key={product.id}

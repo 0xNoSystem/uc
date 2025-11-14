@@ -14,7 +14,7 @@ import { SUPPORT_EMAIL, SUPPORT_PHONE } from "@/lib/contact";
 import { parseStoredCart } from "@/lib/cart";
 import type { OrderConfirmationProps } from "@/emails/OrderConfirmation";
 
-const placeholderImage = "/uclogo.png";
+const placeholderImage = "/uc16.jpg";
 
 const fieldClasses =
   "mt-2 w-full rounded-2xl border border-white/20 bg-black/40 px-4 py-3 text-sm text-white placeholder-white/40 focus:border-white focus:outline-none";
