@@ -18,7 +18,7 @@ export const featuredProducts: Product[] = [
     price: "$20.99",
     newPrice: "$14.99",
     primaryImage: "/light-01.jpg",
-    secondaryImage: "/light-02.png",
+    secondaryImage: "/light-02-min.png",
     badge: "new",
     colors: ["black"],
   },
