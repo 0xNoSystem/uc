@@ -22,6 +22,7 @@ export const featuredProducts: Product[] = [
     badge: "new",
     colors: ["black"],
   },
+
 ];
 
 export const getDefaultColor = (productId: string) => {

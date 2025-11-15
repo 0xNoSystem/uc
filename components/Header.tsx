@@ -23,14 +23,14 @@ const Header = ({ cartCount = 0 }: HeaderProps) => {
         <div className="flex items-center gap-2">
           <button
             type="button"
-            className="rounded-md p-2 text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/60 md:hidden"
+            className="rounded-md p-2 text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/60 lg:hidden"
             onClick={() => setOpen(!open)}
             aria-label="Toggle navigation menu"
             aria-expanded={open}
           >
             {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
-          <nav className="hidden gap-6 text-sm font-semibold tracking-wide text-white md:flex">
+          <nav className="hidden gap-6 text-sm font-semibold tracking-wide text-white lg:flex">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
