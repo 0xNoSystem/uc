@@ -227,16 +227,16 @@ export default function Home() {
         className="w-full scroll-mt-32 bg-black/40 px-6 py-16 sm:px-10"
       >
         <div className="mx-auto flex max-w-5xl flex-col gap-4 text-white">
-        <div className="relative md:top-20 md:text-center mb-8">
+        <div className="relative md:top-20 mb-8">
           <p className="text-sm uppercase tracking-[0.4em] text-white/70 p-1">
             Featured Products
           </p>
           <h2 className="text-3xl font-bold sm:text-4xl ">Curated for Control</h2>
-          <p className="max-w-2xl text-base text-white/70 p-1">
+          <p className="max-w-2xl text-white/70 p-1">
             Layered textures, tactical silhouettes, and engineered fabrics designed for life in motion.
           </p>
         </div>
-      <div className="relative mt-2 grid grid-cols-1 lg:grid-cols-2 gap-y-12 lg:gap-x-20 transform lg:scale-[0.8] md:gap-y-30 md:scale-[0.75] md:bottom-30">
+      <div className="relative mt-2 grid grid-cols-1 lg:grid-cols-2 gap-y-12 lg:gap-x-20 transform lg:scale-[0.8] md:gap-y-30 md:scale-[0.75] lg:bottom-0 sm:bottom-30">
             {featuredProducts.map((product) => (
               <ProductCard
                 key={product.id}
