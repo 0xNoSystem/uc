@@ -73,7 +73,7 @@ const Header = ({ cartCount = 0 }: HeaderProps) => {
       </div>
 
       <nav
-        className={`overflow-hidden border-t border-white/10 bg-black/95 px-4 pb-4 pt-2 text-white transition-all duration-300 md:hidden ${
+        className={`overflow-hidden border-t border-white/10 bg-gray-600/70 px-4 pb-6 pt-2 text-white transition-all duration-300 ${
           open ? 'max-h-48 opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
@@ -81,7 +81,7 @@ const Header = ({ cartCount = 0 }: HeaderProps) => {
           <Link
             key={link.href}
             href={link.href}
-            className="block py-2 text-sm font-semibold tracking-wide"
+            className="block py-2 text-sm font-semibold tracking-wide border-b-1"
             onClick={() => setOpen(false)}
             scroll={link.href.startsWith('#')}
             prefetch={false}
