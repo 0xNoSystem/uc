@@ -107,7 +107,12 @@ const CardContent = ({
             Color:{" "}
             <span className="text-white">{formatColorLabel(activeColor)}</span>
           </p>
-        ) : null}
+        ) : (
+          <p className="text-[14px] uppercase tracking-[0.14em] text-white/60">
+            Color:{" "}
+            <span className="text-white">Default</span>
+          </p>
+        ) }
 
         <div className="rounded-lg border border-white/10 bg-black/30 p-4">
           <p className="text-[12px] uppercase tracking-[0.28em] text-white/50">
@@ -118,7 +123,7 @@ const CardContent = ({
           </p>
         </div>
 
-        <div className="flex items-center justify-between rounded-full border border-white/20 bg-white/5 p-2 mt-4">
+        <div className="flex items-center justify-between rounded-full border border-white/20 bg-white/5 p-2 mt-4 transoform scale-[1.05]">
           <button
             type="button"
             className="h-12 w-12 rounded-full bg-white/10 text-lg font-semibold text-white transition hover:bg-white/20 disabled:opacity-40"
