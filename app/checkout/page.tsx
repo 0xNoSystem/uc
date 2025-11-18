@@ -128,7 +128,7 @@ export default function CheckoutPage() {
     const email = getField("email");
     const notes = getField("notes");
     const paymentMethod =
-      getField("paymentMethod") || "Cash On Delivery";
+      getField("paymentMethod") || "Cash On Del fgivery";
     const orderId = `UC-${Date.now().toString(36).toUpperCase()}`;
 
     const shippingLabel =

@@ -198,7 +198,7 @@ export default function Home() {
       ? 0
       : subtotalAfterDiscount > 30
         ? 0
-        : 2;
+        : 3;
   const orderTotal = subtotalAfterDiscount + shippingFee;
 
   return (
