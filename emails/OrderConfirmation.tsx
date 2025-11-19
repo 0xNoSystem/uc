@@ -116,7 +116,7 @@ export function OrderConfirmation({
                   {line.color ? ` • ${line.color}` : ""}
                 </div>
               </div>
-              <div style={{ fontWeight: 600 }}>{line.price}</div>
+              <div style={{ fontWeight: 600 }}>{" "}{line.price}</div>
             </div>
           ))}
         </div>
@@ -131,7 +131,7 @@ export function OrderConfirmation({
               marginBottom: "6px",
             }}
           >
-            <span>Subtotal</span>
+            <span>Subtotal{" "}</span>
             <strong>{subtotal}</strong>
           </div>
           <div
@@ -141,7 +141,7 @@ export function OrderConfirmation({
               marginBottom: "6px",
             }}
           >
-            <span>Shipping</span>
+            <span>Shipping{" "}</span>
             <strong>{shipping}</strong>
           </div>
           <div
@@ -152,7 +152,7 @@ export function OrderConfirmation({
               marginTop: "12px",
             }}
           >
-            <span>Total</span>
+            <span>Total{" "}</span>
             <strong>{total}</strong>
           </div>
         </div>
