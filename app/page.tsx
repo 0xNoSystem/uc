@@ -212,7 +212,7 @@ export default function Home() {
             UNDERCONTROL.
           </h1>
           <Image
-            src="/uc16-min.jpg"
+            src="/uclogo.jpg"
             alt="Undercontrol hero"
             fill
             priority

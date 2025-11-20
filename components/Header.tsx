@@ -18,7 +18,7 @@ const Header = ({ cartCount = 0 }: HeaderProps) => {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-black/10 bg-black/95 backdrop-blur pt-4">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-black/10 bg-black/70 backdrop-blur pt-4">
       <div className="flex w-full items-center justify-between px-4 py-4 sm:px-6">
         <div className="flex items-center gap-2">
           <button
