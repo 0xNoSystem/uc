@@ -12,9 +12,9 @@
     "@react-email/components": "^1.0.1",
     "@react-email/render": "^2.0.0",
     "lucide-react": "^0.553.0",
-    "next": "16.0.3",
-    "react": "19.2.0",
-    "react-dom": "19.2.0",
+    "next": "^16.0.10",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
     "resend": "^6.4.2"
   },
   "devDependencies": {
