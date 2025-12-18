@@ -47,12 +47,12 @@ const Header = ({ cartCount = 0 }: HeaderProps) => {
 
         <Link
           href="/"
-          className="flex-1 text-center font-bold text-2xl tracking-[0.30em] mr-12 text-white md:flex-none md:text-3xl md:tracking-[0.5em]"
+          className="flex-1 text-center font-bold text-2xl tracking-[0.30em] mr-4 lg:mr-16 text-white md:flex-none md:text-3xl md:tracking-[0.5em]"
         >
           UNDERCONTROL
         </Link>
 
-        <div className="mr-6 flex flex-col lg:flex-row items-center justify-end gap-4 text-white">
+        <div className="mr-10 flex flex-col lg:flex-row items-center justify-end gap-4 text-white">
           <Link
             href="#checkout"
             scroll
