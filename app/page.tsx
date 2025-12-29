@@ -9,6 +9,7 @@ import type { Product } from "@/types/product";
 import { SUPPORT_EMAIL, SUPPORT_PHONE } from "@/lib/contact";
 import type { CartState } from "@/types/cart";
 import { parseStoredCart } from "@/lib/cart";
+import { getShippingFee } from "@/lib/shipping";
 import {
   FALLBACK_COLOR,
   featuredProducts,
@@ -193,12 +194,7 @@ export default function Home() {
     subtotalBeforeDiscount - subtotalAfterDiscount
   );
 
-  const shippingFee =
-    subtotalAfterDiscount === 0
-      ? 0
-      : subtotalAfterDiscount > 30
-        ? 0
-        : 3;
+  const shippingFee = getShippingFee(subtotalAfterDiscount);
   const orderTotal = subtotalAfterDiscount + shippingFee;
 
   return (

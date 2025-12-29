@@ -12,6 +12,7 @@ import {
 } from "@/lib/products";
 import { SUPPORT_EMAIL, SUPPORT_PHONE } from "@/lib/contact";
 import { parseStoredCart } from "@/lib/cart";
+import { getShippingFee } from "@/lib/shipping";
 import type { OrderConfirmationProps } from "@/emails/OrderConfirmation";
 
 const placeholderImage = "/uc16-min.jpg";
@@ -96,12 +97,7 @@ export default function CheckoutPage() {
     0,
     subtotalBeforeDiscount - subtotalAfterDiscount
   );
-  const shippingFee =
-    subtotalAfterDiscount === 0
-      ? 0
-      : subtotalAfterDiscount > 30
-        ? 0
-        : 2;
+  const shippingFee = getShippingFee(subtotalAfterDiscount);
   const orderTotal = subtotalAfterDiscount + shippingFee;
   const totalItems = cartDetails.reduce(
     (sum, item) => sum + (item.quantity ?? 0),
@@ -132,7 +128,7 @@ export default function CheckoutPage() {
     const orderId = `UC-${Date.now().toString(36).toUpperCase()}`;
 
     const shippingLabel =
-      shippingFee === 0 ? "Free" : `$${shippingFee.toFixed(2)}`;
+      shippingFee === 0 ? "Free" : `$${shippingFee.toFixed(3)}`;
     const subtotalLabel = `$${subtotalAfterDiscount.toFixed(2)}`;
     const totalLabel = `$${orderTotal.toFixed(2)}`;
 
