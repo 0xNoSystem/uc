@@ -228,7 +228,7 @@ export default function HomePageClient({
             UNDERCONTROL.
           </h1>
           <Image
-            src="/uc16-min.jpg"
+            src="/uclogo.jpg"
             alt="Undercontrol hero"
             fill
             priority
