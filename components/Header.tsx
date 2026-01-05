@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Link from 'next/link';
-import { ShoppingCart, Instagram, Menu, X } from 'lucide-react';
+import { useState } from "react";
+import Link from "next/link";
+import { ShoppingCart, Instagram, Menu, X } from "lucide-react";
 
 const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '#products', label: 'Catalogue' },
-  { href: '#contact', label: 'Contact' },
+  { href: "/", label: "Home" },
+  { href: "#products", label: "Catalogue" },
+  { href: "#contact", label: "Contact" },
 ];
 
 type HeaderProps = {
@@ -36,7 +36,7 @@ const Header = ({ cartCount = 0 }: HeaderProps) => {
                 key={link.href}
                 href={link.href}
                 className="transition-colors hover:text-gray-300"
-                scroll={link.href.startsWith('#')}
+                scroll={link.href.startsWith("#")}
                 prefetch={false}
               >
                 {link.label}
@@ -66,15 +66,15 @@ const Header = ({ cartCount = 0 }: HeaderProps) => {
               </span>
             )}
           </Link>
-          <a  href="https://www.instagram.com/undercontrol.vr" target="_blank">
-          <Instagram className="ml-2 h-6 w-6" />
+          <a href="https://www.instagram.com/undercontrol.vr" target="_blank">
+            <Instagram className="ml-2 h-6 w-6" />
           </a>
         </div>
       </div>
 
       <nav
         className={`overflow-hidden border-t border-white/10 bg-gray-400/80 text-white transition-all duration-300 ${
-          open ? 'max-h-48 opacity-100' : 'max-h-0 opacity-0'
+          open ? "max-h-48 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         {navLinks.map((link) => (
@@ -83,7 +83,7 @@ const Header = ({ cartCount = 0 }: HeaderProps) => {
             href={link.href}
             className="block py-2 text-sm font-semibold tracking-wide border-b-1 px-4 hover:bg-gray-300 hover:text-black text-center py-3"
             onClick={() => setOpen(false)}
-            scroll={link.href.startsWith('#')}
+            scroll={link.href.startsWith("#")}
             prefetch={false}
           >
             {link.label}

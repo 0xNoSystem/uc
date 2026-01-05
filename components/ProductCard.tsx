@@ -109,10 +109,9 @@ const CardContent = ({
           </p>
         ) : (
           <p className="text-[14px] uppercase tracking-[0.14em] text-white/60">
-            Color:{" "}
-            <span className="text-white">Default</span>
+            Color: <span className="text-white">Default</span>
           </p>
-        ) }
+        )}
 
         <div className="rounded-lg border border-white/10 bg-black/30 p-4">
           <p className="text-[12px] uppercase tracking-[0.28em] text-white/50">
@@ -166,10 +165,7 @@ const cardClasses =
 const ProductCard = (props: ProductCardProps) => {
   if (props.product.href) {
     return (
-      <Link
-        href={props.product.href}
-        className={cardClasses}
-      >
+      <Link href={props.product.href} className={cardClasses}>
         <CardContent {...props} />
       </Link>
     );

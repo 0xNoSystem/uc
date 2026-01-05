@@ -1,7 +1,15 @@
 import type { CartState } from "@/types/cart";
-import { getDefaultColor } from "@/lib/products";
+import { FALLBACK_COLOR, getDefaultColor } from "@/lib/products";
 
-export const parseStoredCart = (payload: string | null): CartState => {
+type ProductLike = {
+  id: string;
+  colors?: string[];
+};
+
+export const parseStoredCart = (
+  payload: string | null,
+  products: ProductLike[] = [],
+): CartState => {
   if (!payload) return {};
   try {
     const parsed = JSON.parse(payload) as Record<string, unknown>;
@@ -14,7 +22,7 @@ export const parseStoredCart = (payload: string | null): CartState => {
           if (value <= 0) return acc;
           acc[productId] = {
             quantity: value,
-            color: getDefaultColor(productId),
+            color: getDefaultColor(productId, products) ?? FALLBACK_COLOR,
           };
           return acc;
         }
@@ -29,12 +37,12 @@ export const parseStoredCart = (payload: string | null): CartState => {
           const color =
             typeof colorCandidate === "string"
               ? colorCandidate
-              : getDefaultColor(productId);
+              : (getDefaultColor(productId, products) ?? FALLBACK_COLOR);
           acc[productId] = { quantity, color };
         }
         return acc;
       },
-      {}
+      {},
     );
   } catch {
     return {};

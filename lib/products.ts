@@ -22,11 +22,13 @@ export const featuredProducts: Product[] = [
     badge: "new",
     colors: ["black"],
   },
-
 ];
 
-export const getDefaultColor = (productId: string) => {
-  const product = featuredProducts.find((item) => item.id === productId);
+export const getDefaultColor = (
+  productId: string,
+  products: Array<{ id: string; colors?: string[] }> = featuredProducts,
+) => {
+  const product = products.find((item) => item.id === productId);
   return product?.colors?.[0] ?? FALLBACK_COLOR;
 };
 

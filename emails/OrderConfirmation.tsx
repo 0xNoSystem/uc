@@ -21,8 +21,7 @@ export type OrderConfirmationProps = {
 };
 
 const containerStyles = {
-  fontFamily:
-    "'Helvetica Neue', Helvetica, Arial, sans-serif",
+  fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
   backgroundColor: "#f4f4f5",
   padding: "32px 16px",
 };
@@ -70,9 +69,9 @@ export function OrderConfirmation({
             lineHeight: "1.5",
           }}
         >
-          Your order is being processed. Below is a summary
-          for your records. If anything looks off, just reply
-          to this email and we&apos;ll get it sorted fast.
+          Your order is being processed. Below is a summary for your records. If
+          anything looks off, just reply to this email and we&apos;ll get it
+          sorted fast.
         </p>
 
         <p
@@ -116,7 +115,7 @@ export function OrderConfirmation({
                   {line.color ? ` • ${line.color}` : ""}
                 </div>
               </div>
-              <div style={{ fontWeight: 600 }}>{" "}{line.price}</div>
+              <div style={{ fontWeight: 600 }}> {line.price}</div>
             </div>
           ))}
         </div>
@@ -199,8 +198,8 @@ export function OrderConfirmation({
             color: "#71717a",
           }}
         >
-          We&apos;ll reach out once the courier picks up your
-          package. Until then, stay under control. ✊
+          We&apos;ll reach out once the courier picks up your package. Until
+          then, stay under control. ✊
         </p>
       </div>
     </div>

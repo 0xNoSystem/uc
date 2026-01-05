@@ -20,7 +20,7 @@ export async function POST(request: Request) {
         error:
           "Email service is not configured. Please set RESEND_API_KEY or NEXT_PUBLIC_RESEND_API_KEY.",
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 
@@ -32,7 +32,7 @@ export async function POST(request: Request) {
     console.error("Invalid order payload", error);
     return NextResponse.json(
       { success: false, error: "Malformed payload." },
-      { status: 400 }
+      { status: 400 },
     );
   }
 
@@ -52,7 +52,7 @@ export async function POST(request: Request) {
       from: fromEmail,
       to: Array.from(recipients),
       subject: `Order ${payload.orderId} · ${payload.total}`,
-      react: OrderConfirmation(payload), 
+      react: OrderConfirmation(payload),
     });
 
     if (error) {
@@ -62,7 +62,7 @@ export async function POST(request: Request) {
           success: false,
           error: "Unable to send email via Resend.",
         },
-        { status: 502 }
+        { status: 502 },
       );
     }
 
@@ -74,7 +74,7 @@ export async function POST(request: Request) {
         success: false,
         error: "Unexpected error while sending email.",
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
