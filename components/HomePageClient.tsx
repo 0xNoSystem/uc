@@ -253,7 +253,7 @@ export default function HomePageClient({
             Layered textures, tactical silhouettes, and engineered fabrics
             designed for life in motion.
           </p>
-          <div className="mt-10 grid grid-cols-2 gap-6">
+          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2">
             {products.map((product) => (
               <ProductCard
                 key={product.id}
